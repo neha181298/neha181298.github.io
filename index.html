@@ -7,8 +7,21 @@
 		<script>
 
 	  		AFRAME.registerComponent('video1', {
-			  init: function(){
-				}
+			 init: function () {
+    		this.toggle = false;
+    		document.querySelector("#video1").pause(); //reference to the video
+  			},
+  			tick:function(){  
+   			if(document.querySelector("a-marker").object3D.visible == true){
+     		if(!this.toggle){
+       		this.toggle = true;
+       		document.querySelector("#video1").play();
+     		}
+   			}else{
+     		this.toggle = false;
+     		document.querySelector("#video1").pause();
+   			}
+  }
 			});
 			
 		</script>
@@ -24,7 +37,7 @@
 
 				<a-plane color="black" rotation="-90 0 0" position="-2.7 -0.2 -3.8" width="2" height="0.5" material="transparent: true; opacity: 0.90"></a-plane>
 
-				 <a-video src="#video1" width="16" height="9" position="-2.7 -0.2 -3.8"></a-video>
+				 <a-video video1 src="#video1" width="16" height="9" position="-2.7 -0.2 -3.8"></a-video>
 
   				<!-- Defining the URL inline. Not recommended but more comfortable for web developers. -->
 			</a-marker>
