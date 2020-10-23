@@ -29,15 +29,14 @@
 	<body style='margin : 0px; overflow: scroll;'>
 	  <a-scene embedded arjs='patternRatio: 0.69; debugUIEnabled: false;'>
 			<a-assets>
-				<video id="video1" autoplay loop="true" src="/assets/video1.mp4"></video>
+				<video id="video1" autoplay loop="true" src="/assets/video01.mp4"></video>
 			</a-assets>
 			<a-marker type='pattern' url='/pattern-happy.patt' emitevents='true' cursor='rayOrigin: mouse'>
 
 				<!-- Left Column -->
 
-				 <a-video video1 src="#video1" width="2" height="0.5" position="-2.7 -0.2 -3.8"></a-video>
+				 <a-video video1 src="#video1" width="2" height="0.5" position="0 0 -20"></a-video>
 
-  				<!-- Defining the URL inline. Not recommended but more comfortable for web developers. -->
 			</a-marker>
 	    	<a-entity camera></entity>
 	  	</a-scene>
